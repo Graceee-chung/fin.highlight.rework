@@ -1,0 +1,16 @@
+Total files: 1
+    # all files with .txt ending.
+mda: 0
+    # all mda. only consider mda in item 6 or item 7. 
+quantitative: 0
+    # all quant. only consider Item 7A quant. 
+financial statements: 0
+    # item 7 is finan but item 6 is not MDA. 
+    # improvements may be found here 
+Fail files: 1
+    # fail cases.. 
+    # improvements may be found here 
+
+
+Pass rate = 0.0
+passfiles = total - fail = 0
