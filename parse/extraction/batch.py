@@ -1,9 +1,9 @@
 import os, sys, subprocess, shutil
 import subprocess as sp
 
-# files=os.listdir(os.getcwd())
-# os.chdir('/home/intern/Dyna/data/sel4_10k/2020/1389/')
-files = ['test_file_2020in1389.txt']
+files = os.listdir('/home/intern/Dyna/parse/extraction/test_files/')
+# os.chdir('/home/intern/Dyna/parse/extraction/test_files/')
+# files = ['test_file_2020in1389.txt']
 
 total=0
 sucMDA=0
@@ -27,6 +27,7 @@ for file in files:
         respond = sp.run(["perl", "extract.pl", file], capture_output=True, text=True)
     
     respond = respond.stdout.split('\n')
+    print(respond)
     
     if "Invalid Item 7: Financial statements found. " in respond:
         fina+=1
@@ -98,26 +99,28 @@ for file in finalist:
     filehtml=name+".html" # test.html
     fileplaintext=file+"_plaintext" # test.txt_plaintext
 
+    path = os.getcwd() + '/test_files/'
     # copy plaintext. 
-    shutil.copy(file+"_plaintext", "fina/"+file+"_plaintext")
+    shutil.copy(path + file + "_plaintext", "fina/"+file+"_plaintext")
     # copy original text under fail/ori.
-    shutil.copy(file, "fina/ori/"+file)
+    shutil.copy(path + file, "fina/ori/"+file)
     # copy html. 
-    shutil.copy(file, "fina/"+filehtml)
+    shutil.copy(path + file, "fina/"+filehtml)
 
 print("processing Fail files...")
 for file in faillist:
     splitor = file.rsplit('.', 1)
     name = splitor[0]
     filehtml = name+".html" # test.html
-    fileplaintext=file+"_plaintext" # test.txt_plaintext
+    fileplaintext = file +"_plaintext" # test.txt_plaintext
 
+    path = os.getcwd() + '/test_files/'
   # copy plaintext
-    shutil.copy(fileplaintext, "fail/"+fileplaintext)
+    shutil.copy(path + fileplaintext, "fail/"+fileplaintext)
     # copy html
-    shutil.copy(file, "fail/"+filehtml)
+    shutil.copy(path + file, "fail/"+filehtml)
     # copy original text
-    shutil.copy(file, "fail/ori/"+file)
+    shutil.copy(path + file, "fail/ori/"+file)
 
 with open('result', 'w', encoding='utf-8') as fh:
     fh.write(f"Total files: {total}\n")

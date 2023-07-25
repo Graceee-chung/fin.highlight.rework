@@ -1,4 +1,4 @@
-Total files: 1
+Total files: 2
     # all files with .txt ending.
 mda: 0
     # all mda. only consider mda in item 6 or item 7. 
@@ -7,7 +7,7 @@ quantitative: 0
 financial statements: 0
     # item 7 is finan but item 6 is not MDA. 
     # improvements may be found here 
-Fail files: 1
+Fail files: 2
     # fail cases.. 
     # improvements may be found here 
 

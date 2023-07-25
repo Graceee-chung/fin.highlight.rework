@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 
 # # Directory path to change to
-# my $new_directory = '/home/intern/Dyna/data/sel4_10k/2020/1389/';
+my $new_directory = '/home/intern/Dyna/parse/extraction/test_files/';
 
-# # Change the current directory
-# if (chdir($new_directory)) {
-#     print "Successfully changed to $new_directory\n";
-# } else {
-#     print "Failed to change to $new_directory: $!\n";
-# }
+# Change the current directory
+if (chdir($new_directory)) {
+    print "Successfully changed to $new_directory\n";
+} else {
+    print "Failed to change to $new_directory: $!\n";
+}
 
 
 package HTMLStrip;
