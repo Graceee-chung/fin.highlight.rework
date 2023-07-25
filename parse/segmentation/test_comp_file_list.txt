@@ -1,0 +1,2 @@
+/home/intern/Dyna/parse/segmentation/docpairs/2019_mda/20190312_10-K_edgar_data_1403853_0001403853-19-000010.txt_mda
+/home/intern/Dyna/parse/segmentation/docpairs/2020_mda/20200310_10-K_edgar_data_1403853_0001403853-20-000016.txt_mda
